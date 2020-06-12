@@ -1,0 +1,28 @@
+server:
+  port: 80
+  servlet:
+    context-path: /mds
+spring:
+  datasource:
+    test1:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      # url必须使用jdbc-url的名称
+      jdbc-url: jdbc:mysql://localhost:3306/db_test?useSSL=false&serverTimezone=UTC&user=root&password=&useUnicode=true&characterEncoding=UTF8&autoReconnect=true&failOverReadOnly=false&allowPublicKeyRetrieval=true
+      password: root
+      username: root
+    test2:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC&user=root&password=&useUnicode=true&characterEncoding=UTF8&autoReconnect=true&failOverReadOnly=false&allowPublicKeyRetrieval=true
+      password: root
+      username: root
+  jpa:
+    hibernate:
+      ddl-auto: update #如果再次运行，检查表是否要更新
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+    show-sql: true
+    database: mysql
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: false
